@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <span class="font-weight font-weight-bolder">Project Management </span>
+    <ul *ngIf="isUserLoggedIn" class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Actions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/list">View Projects</a>
+              <a class="dropdown-item" routerLink="/new">New Project</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+      </ul>
+  </nav>

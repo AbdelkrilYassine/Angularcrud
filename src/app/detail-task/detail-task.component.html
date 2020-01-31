@@ -1,0 +1,9 @@
+<div *ngIf="errorMessage" class="p-5 alert alert-danger" role="alert">{{errorMessage}}</div>
+<ul class="p-5 list-group list-group-flush">
+    <li class="list-group-item">ID: {{task.id}} </li>
+    <li class="list-group-item">Title: {{task.title}}</li>
+    <li class="list-group-item">Due date: {{task.dueDate}}</li>
+    <li class="list-group-item">Priority: {{task.priority}}</li>
+    <li class="list-group-item">Description: {{task.description}}</li>
+</ul>
+    

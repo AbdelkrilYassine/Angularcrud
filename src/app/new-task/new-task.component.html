@@ -1,0 +1,31 @@
+<div *ngIf="errorMessage" class="p-5 alert alert-danger" role="alert">{{errorMessage}}</div>
+<form class="p-5" #f="ngForm" (ngSubmit)="submitForm(f)">
+    <div class="form-group ">
+    <label for="title">Project title:</label>
+    <input type="text" class="form-control" id="title" [class.is-invalid]="title.invalid && title.touched" required #title="ngModel"  name="title" [(ngModel)]="task.title">
+    <small class="text-danger" [class.d-none]="title.valid || title.untouched">Title is required</small>
+    </div>
+    <div class="form-group">
+    <label for="dueDate">Due date:</label>
+    <input type="date" class="form-control" id="dueDate" [class.is-invalid]="dueDate.invalid && dueDate.touched" required #dueDate="ngModel"  name="dueDate" [(ngModel)]="task.dueDate">
+    <small class="text-danger" [class.d-none]="dueDate.valid || dueDate.untouched">Due date is required</small>
+    </div> 
+    <div class="form-group">
+    <label for="priority">Priority:</label>
+    <select for="priority" class="browser-default custom-select mb-3" [class.is-invalid]="priority.invalid && priority.touched" required #priority="ngModel"  name="priority" [(ngModel)]="task.priority">
+    <option selected value="LOW">LOW</option>
+    <option value="Medium">Medium</option>
+    <option value="HIGH">HIGH</option>
+    </select>
+    <small class="text-danger" [class.d-none]="priority.valid || priority.untouched">Priority is required</small>
+    </div> 
+    <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" rows="5" id="description" [class.is-invalid]="description.invalid && description.touched" required #description="ngModel"  name="description" [(ngModel)]="task.description"></textarea>
+    <small class="text-danger" [class.d-none]="description.valid || description.untouched">Description is required</small> 
+    </div>
+    <div class="text-right">
+    <button class="btn btn-primary" [disabled]="f.pristine || f.invalid"  type="submit">Send</button> 
+    </div> 
+</form>
+    
